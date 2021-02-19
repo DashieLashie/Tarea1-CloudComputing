@@ -94,11 +94,65 @@ app.post('/check-words',function (req, res) {
     
 })
 
+app.post('/dice-roll',function (req, res) {
+    var dice1 = req.body.sides;
+    var URL = `https://api.toys/api/dice_roll/` + dice1;
 
+    axios.post(URL,{
+        sides : dice1,
+    }).then((response) => {
+        res.send(response.data)
+    }).catch((error) => {
+        res.send(error);
+        console.error(error);
+    })
 
+})
 
+app.post('/dictionary',function (req, res) {
+    var word = req.body.text;
+    var URL = `https://api.toys/api/check_dictionary/` + word;
 
+    axios.post(URL,{
+        text : word,
+    }).then((response) => {
+        res.send(response.data)
+    }).catch((error) => {
+        res.send(error);
+        console.error(error);
+    })
 
+})
+
+app.post('/guild-wars',function (req, res) {
+    var spec = req.body.specie;
+    var URL = `http://www.api.toys/api/gw2_character/` + spec;
+
+    axios.post(URL,{
+        specie : spec,
+    }).then((response) => {
+        res.send(response.data)
+    }).catch((error) => {
+        res.send(error);
+        console.error(error);
+    })
+
+})
+
+app.post('/time-zone',function (req, res) {
+    var zone = req.body.time;
+    var URL = `http://www.api.toys/api/timezone_offset/` + zone;
+
+    axios.post(URL,{
+        time : zone,
+    }).then((response) => {
+        res.send(response.data)
+    }).catch((error) => {
+        res.send(error);
+        console.error(error);
+    })
+
+})
 
 
 
