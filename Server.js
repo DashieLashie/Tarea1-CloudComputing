@@ -80,7 +80,17 @@ app.get('/move/:name',(req, res) => {
 })
 
 app.post('/check-words',function (req, res) {
-    var letters = req.body.letters
+    var word = req.body.text;
+    var URL = `https://api.toys/api/find_words/` + word;
+
+    axios.post(URL,{
+        text : word,
+    }).then((response) => {
+        res.send(response.data)
+    }).catch((error) => {
+        res.send(error);
+        console.error(error);
+    })
     
 })
 
