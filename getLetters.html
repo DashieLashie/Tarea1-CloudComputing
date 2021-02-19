@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write 9 letters</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+        $(document).ready(function(){
+            var letters;
+            $("#submit").click(function(){
+                letters=$("#letters").val();
+                $.post("http://localhost:3000/check-words",{letters: letters}, function(data){
+                    if(data === 'yes') {
+                        alert("Letters sent!");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Just 9 Characters please!</h1>
+    <input type="TEXT" id="letters" size="9"><br>
+    <input type="button" id="submit" value="Submit">
+</body>
+</html>
