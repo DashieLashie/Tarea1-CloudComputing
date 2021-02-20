@@ -14,7 +14,7 @@ This project includes 5 get methods that use the poke api and 5 post methods tha
 
 #### The documentation shows all the necesary information for you to make use of this simple API <p>
 
-#### There are 2 URLs that you can use, the local one `http://localhost:8080` and the one that is on the cloud platform `https://riot-api-server.herokuapp.com` (while using the URL hosted on the cloud platform it might be down sometimes, this is because the API KEY needs to be updated every 24hr). All responses will return data in `json`.
+#### Once you have everything setup, you can run the code and connect to it using `http://localhost:3000/` plus the additional routes depending on what you'd like to do.  All responses will return data in `json` format.
 
 ## **GET Methods**
 
