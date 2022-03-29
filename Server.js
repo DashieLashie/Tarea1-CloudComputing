@@ -4,6 +4,10 @@ const axios = require('axios');
 
 const app = express();
 
+app.get("/ping", (req, res) => {
+    res.send("pong");
+});
+
 let port = process.env.PORT || 8080;
 
 app.use(express.json());
